@@ -1,0 +1,67 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="aiogram" />
+          <option value="aiohttp" />
+          <option value="aiosignal" />
+          <option value="async-timeout" />
+          <option value="attrs" />
+          <option value="Babel" />
+          <option value="frozenlist" />
+          <option value="multidict" />
+          <option value="pytz" />
+          <option value="typing_extensions" />
+          <option value="yarl" />
+          <option value="certifi" />
+          <option value="charset-normalizer" />
+          <option value="cloudscraper" />
+          <option value="django-environ" />
+          <option value="fake-useragent" />
+          <option value="idna" />
+          <option value="pyparsing" />
+          <option value="PySocks" />
+          <option value="requests" />
+          <option value="requests-toolbelt" />
+          <option value="urllib3" />
+          <option value="gunicorn" />
+          <option value="aiohappyeyeballs" />
+          <option value="aiosqlite" />
+          <option value="cffi" />
+          <option value="curl_cffi" />
+          <option value="et_xmlfile" />
+          <option value="numpy" />
+          <option value="openpyxl" />
+          <option value="pandas" />
+          <option value="propcache" />
+          <option value="pycparser" />
+          <option value="python-dateutil" />
+          <option value="six" />
+          <option value="tzdata" />
+          <option value="h11" />
+          <option value="markdown-it-py" />
+          <option value="mdurl" />
+          <option value="outcome" />
+          <option value="Pygments" />
+          <option value="rich" />
+          <option value="selenium" />
+          <option value="setuptools" />
+          <option value="sniffio" />
+          <option value="sortedcontainers" />
+          <option value="trio" />
+          <option value="trio-websocket" />
+          <option value="undetected-chromedriver" />
+          <option value="websocket-client" />
+          <option value="websockets" />
+          <option value="wsproto" />
+          <option value="playwright" />
+          <option value="python-dotenv" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>
