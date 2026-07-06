@@ -1,0 +1,506 @@
+/* =========================================================
+   Roamly Guide — Custom Styles
+   Layered on top of Tailwind utility classes.
+   ========================================================= */
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #bfdbfe;
+  color: #0f172a;
+}
+
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.5rem 0;
+  z-index: 100;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Navigation ---------- */
+#navbar {
+  background: transparent;
+}
+
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06), 0 8px 30px -12px rgba(15, 23, 42, 0.15);
+}
+
+.nav-link {
+  position: relative;
+  color: #475569;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #14b8a6);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+.nav-link:hover {
+  color: #0f172a;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-nav-link {
+  color: #334155;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px -16px rgba(15, 23, 42, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  border-radius: 9999px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.45);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #0f172a;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn-secondary:hover {
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(15, 23, 42, 0.2);
+}
+
+/* ---------- Hero ---------- */
+.gradient-text {
+  background: linear-gradient(90deg, #2563eb, #0ea5e9 50%, #14b8a6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.phone-shell {
+  position: relative;
+  aspect-ratio: 9 / 18.5;
+  border-radius: 2.75rem;
+  padding: 0.6rem;
+  background: linear-gradient(160deg, #0f172a, #1e293b);
+  box-shadow:
+    0 30px 60px -20px rgba(15, 23, 42, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 1.1rem;
+  background: #0f172a;
+  border-radius: 0 0 1rem 1rem;
+  z-index: 20;
+}
+
+.phone-screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 2.1rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 20%, #1d4ed8 0%, #0f172a 65%);
+}
+
+.badge-chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  box-shadow: 0 8px 20px -8px rgba(15, 23, 42, 0.35);
+  color: #1e293b;
+}
+
+.orbit-badge {
+  animation: orbit 14s linear infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -16px rgba(15, 23, 42, 0.25);
+}
+
+/* ---------- Section headings ---------- */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  text-align: center;
+}
+
+.section-subtitle {
+  margin-top: 1rem;
+  font-size: 1.0625rem;
+  color: #64748b;
+  text-align: center;
+}
+
+/* left-aligned variant used in the two-column section */
+.section-title.text-left,
+.section-title.text-left ~ .section-subtitle {
+  text-align: left;
+}
+
+/* ---------- Benefit cards ---------- */
+.benefit-card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -20px rgba(15, 23, 42, 0.18);
+  border-color: transparent;
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px -8px rgba(37, 99, 235, 0.4);
+}
+
+.benefit-title {
+  margin-top: 1.25rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.benefit-text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+/* ---------- How it works ---------- */
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 9999px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  box-shadow: 0 16px 30px -12px rgba(37, 99, 235, 0.45);
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------- Destination cards ---------- */
+.dest-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #eef2f7;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 54px -22px rgba(15, 23, 42, 0.22);
+}
+
+.dest-image {
+  height: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.dest-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent 60%);
+}
+
+.dest-flag {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.25));
+  transition: transform 0.35s ease;
+}
+.dest-card:hover .dest-flag {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.dest-body {
+  padding: 1.5rem;
+}
+
+.dest-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.dest-text {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  min-height: 2.6rem;
+}
+
+.dest-btn {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2563eb;
+  transition: gap 0.2s ease;
+}
+.dest-btn::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+.dest-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* ---------- Compare cards ---------- */
+.compare-card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 20px 44px -22px rgba(15, 23, 42, 0.16);
+}
+
+.check-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+  margin-top: 0.15rem;
+}
+
+/* ---------- Testimonials ---------- */
+.testimonial-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid #eef2f7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -22px rgba(15, 23, 42, 0.18);
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* ---------- FAQ Accordion ---------- */
+.faq-item {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.faq-item:hover {
+  border-color: #dbeafe;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #0f172a;
+  background: transparent;
+  cursor: pointer;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: #2563eb;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+  color: #64748b;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 16rem;
+  padding: 0 1.5rem 1.5rem;
+}
+
+/* ---------- Final CTA banner ---------- */
+.cta-banner {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9 55%, #14b8a6);
+}
+
+/* ---------- Footer ---------- */
+.footer-link {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+.footer-link:hover {
+  color: #fff;
+}
+
+/* ---------- Scroll-reveal animation ---------- */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate="fade-up"].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-animate="fade-up"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Utility: keyframes referenced by Tailwind config also kept as fallback ---------- */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}

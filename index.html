@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airalo Guide — Independent eSIM Recommendations for Travelers</title>
+<meta name="description" content="An independent travel connectivity guide that helps you compare and choose the best eSIM for your next trip. Instant activation, global coverage, no roaming fees.">
+<meta name="keywords" content="eSIM, travel eSIM, international data, roaming, travel connectivity, eSIM guide">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.roamlyguide.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Airalo Guide — Independent eSIM Recommendations for Travelers">
+<meta property="og:description" content="Compare and choose the best eSIM for your next trip. Instant activation, global coverage, no roaming fees.">
+<meta property="og:image" content="https://www.roamlyguide.com/og-image.jpg">
+<meta property="og:url" content="https://airalo.simcard.workers.dev/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Airalo Guide — Independent eSIM Recommendations for Travelers">
+<meta name="twitter:description" content="Compare and choose the best eSIM for your next trip. Instant activation, global coverage, no roaming fees.">
+
+<!-- Preconnects -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Tailwind (CDN, config inline) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          primary: '#2563eb',
+          secondary: '#0ea5e9',
+          accent: '#14b8a6',
+          lightbg: '#f8fafc',
+        },
+        animation: {
+          'float': 'float 6s ease-in-out infinite',
+          'float-slow': 'float 9s ease-in-out infinite',
+          'pulse-ring': 'pulseRing 2.5s cubic-bezier(0.4,0,0.6,1) infinite',
+          'fade-up': 'fadeUp 0.7s ease forwards',
+          'orbit': 'orbit 14s linear infinite',
+        },
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-16px)' },
+          },
+          pulseRing: {
+            '0%': { transform: 'scale(0.8)', opacity: '0.8' },
+            '80%, 100%': { transform: 'scale(1.8)', opacity: '0' },
+          },
+          fadeUp: {
+            '0%': { opacity: '0', transform: 'translateY(24px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          orbit: {
+            '0%': { transform: 'rotate(0deg) translateX(150px) rotate(0deg)' },
+            '100%': { transform: 'rotate(360deg) translateX(150px) rotate(-360deg)' },
+          },
+        },
+      },
+    },
+  }
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+
+<!-- Skip link for accessibility -->
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ NAVIGATION ============ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-18 py-3">
+      <a href="#hero" class="flex items-center gap-2 group" aria-label="Airalo Guide home">
+        <span class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Z" stroke="white" stroke-width="1.6"></path>
+          </svg>
+        </span>
+        <span class="text-lg font-bold tracking-tight">Airalo<span class="text-primary">Guide</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="hidden md:block">
+        <a href="#offer" class="btn-primary text-sm px-5 py-2.5">Get Your eSIM</a>
+      </div>
+
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="md:hidden flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100/80 transition-colors">
+        <svg id="menuIconOpen" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg id="menuIconClose" width="22" height="22" viewBox="0 0 24 24" fill="none" class="hidden"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden mx-4 mb-3 rounded-2xl glass-panel px-6 py-6 flex flex-col gap-5 text-base font-medium">
+    <a href="#benefits" class="mobile-nav-link">Benefits</a>
+    <a href="#how-it-works" class="mobile-nav-link">How it works</a>
+    <a href="#destinations" class="mobile-nav-link">Destinations</a>
+    <a href="#faq" class="mobile-nav-link">FAQ</a>
+    <a href="#offer" class="btn-primary text-center mt-1">Get Your eSIM</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="relative overflow-hidden pt-36 pb-24 lg:pt-44 lg:pb-32">
+  <!-- Background gradient blobs -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 via-white to-white"></div>
+  <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl -z-10"></div>
+  <div class="absolute top-10 -right-24 h-96 w-96 rounded-full bg-accent/20 blur-3xl -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <!-- Copy -->
+    <div class="text-center lg:text-left" data-animate="fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 backdrop-blur px-4 py-1.5 text-xs font-semibold text-slate-600 shadow-sm">
+        <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+        Trusted travel connectivity guide
+      </span>
+
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08]">
+        Stay Connected
+        <span class="block gradient-text">Wherever You Travel</span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0">
+        Instant eSIM activation for international travelers. No roaming fees. No physical SIM cards.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+        <a href="#offer" class="btn-primary text-base px-8 py-4 shadow-lg shadow-blue-500/25">
+          Get Your eSIM
+          <svg class="ml-1.5 inline-block" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn-secondary text-base px-8 py-4">
+          See how it works
+        </a>
+      </div>
+
+      <div class="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-slate-500">
+        <div>
+          <p class="text-2xl font-extrabold text-slate-900">190+</p>
+          <p>Countries &amp; regions</p>
+        </div>
+        <div class="h-10 w-px bg-slate-200"></div>
+        <div>
+          <p class="text-2xl font-extrabold text-slate-900">2 min</p>
+          <p>Average setup time</p>
+        </div>
+        <div class="h-10 w-px bg-slate-200"></div>
+        <div>
+          <p class="text-2xl font-extrabold text-slate-900">4.9/5</p>
+          <p>Traveler rating</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Illustration -->
+    <div class="relative flex items-center justify-center" data-animate="fade-up" data-delay="150">
+      <div class="relative w-72 sm:w-80">
+        <!-- Orbiting badges -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none hidden sm:flex">
+          <div class="relative h-full w-full">
+            <div class="absolute left-1/2 top-1/2 h-2 w-2 -ml-1 -mt-1 orbit-badge" style="animation-delay:0s;">
+              <span class="badge-chip">🇯🇵 Tokyo</span>
+            </div>
+            <div class="absolute left-1/2 top-1/2 h-2 w-2 -ml-1 -mt-1 orbit-badge" style="animation-delay:-4.6s;">
+              <span class="badge-chip">🇪🇸 Madrid</span>
+            </div>
+            <div class="absolute left-1/2 top-1/2 h-2 w-2 -ml-1 -mt-1 orbit-badge" style="animation-delay:-9.3s;">
+              <span class="badge-chip">🇺🇸 NYC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone mockup -->
+        <div class="relative mx-auto w-56 sm:w-64 animate-float">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <!-- world map dots -->
+              <svg viewBox="0 0 300 300" class="absolute inset-0 w-full h-full opacity-90">
+                <defs>
+                  <linearGradient id="mapGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#2563eb"/>
+                    <stop offset="100%" stop-color="#14b8a6"/>
+                  </linearGradient>
+                </defs>
+                <g fill="url(#mapGrad)" opacity="0.85">
+                  <circle cx="40" cy="90" r="3"/><circle cx="55" cy="70" r="2"/><circle cx="70" cy="100" r="2.5"/>
+                  <circle cx="120" cy="60" r="2"/><circle cx="140" cy="80" r="3"/><circle cx="160" cy="55" r="2"/>
+                  <circle cx="200" cy="90" r="2.5"/><circle cx="220" cy="120" r="2"/><circle cx="240" cy="70" r="3"/>
+                  <circle cx="90" cy="150" r="2"/><circle cx="130" cy="170" r="2.5"/><circle cx="180" cy="160" r="2"/>
+                  <circle cx="210" cy="190" r="3"/><circle cx="60" cy="200" r="2"/><circle cx="250" cy="150" r="2"/>
+                </g>
+                <path d="M40 90 Q120 40 200 90 T240 70" stroke="url(#mapGrad)" stroke-width="1.5" fill="none" stroke-dasharray="4 4" opacity="0.6"/>
+                <path d="M60 200 Q130 220 210 190" stroke="url(#mapGrad)" stroke-width="1.5" fill="none" stroke-dasharray="4 4" opacity="0.6"/>
+              </svg>
+              <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
+                <div class="relative mb-3">
+                  <span class="absolute inset-0 rounded-full bg-accent/40 animate-pulse-ring"></span>
+                  <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-white/95 shadow-lg">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM7.76 14.24a6 6 0 0 1 8.48 0M4.93 11.4a10 10 0 0 1 14.14 0" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  </span>
+                </div>
+                <p class="text-white text-xs font-semibold tracking-wide">CONNECTED</p>
+                <p class="text-white/70 text-[11px] mt-1">4G/5G · No roaming fees</p>
+              </div>
+            </div>
+          </div>
+          <!-- floating glass card -->
+          <div class="absolute -right-10 sm:-right-16 top-8 glass-card px-4 py-3 animate-float-slow hidden sm:block">
+            <p class="text-[11px] text-slate-500 font-medium">Data plan</p>
+            <p class="text-sm font-bold text-slate-900">5GB · 30 days</p>
+          </div>
+          <div class="absolute -left-10 sm:-left-16 bottom-10 glass-card px-4 py-3 animate-float hidden sm:block">
+            <p class="text-[11px] text-slate-500 font-medium">Activation</p>
+            <p class="text-sm font-bold text-accent">Instant ⚡</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section id="benefits" class="py-24 bg-lightbg">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto" data-animate="fade-up">
+      <p class="eyebrow">Why travelers switch</p>
+      <h2 class="section-title">Everything you need, nothing you don't</h2>
+      <p class="section-subtitle">We compare and recommend eSIM plans so you can focus on your trip, not your phone bill.</p>
+    </div>
+
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="benefit-card" data-animate="fade-up" data-delay="0">
+        <div class="benefit-icon bg-gradient-to-br from-blue-500 to-blue-600">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9Z" stroke="white" stroke-width="1.7"/><path d="M3 12h18M12 3c2.4 2.6 3.6 5.7 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.7-3.6-9s1.2-6.4 3.6-9Z" stroke="white" stroke-width="1.7"/></svg>
+        </div>
+        <h3 class="benefit-title">Global Coverage</h3>
+        <p class="benefit-text">Reliable data in 190+ countries and regions, from major cities to remote getaways.</p>
+      </div>
+
+      <div class="benefit-card" data-animate="fade-up" data-delay="100">
+        <div class="benefit-icon bg-gradient-to-br from-sky-500 to-cyan-500">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="benefit-title">Instant Activation</h3>
+        <p class="benefit-text">Scan a QR code and get online in minutes — no store visits, no waiting at the airport.</p>
+      </div>
+
+      <div class="benefit-card" data-animate="fade-up" data-delay="200">
+        <div class="benefit-icon bg-gradient-to-br from-teal-500 to-emerald-500">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5.5c0-1.93-2.24-3.5-5-3.5S7 3.57 7 5.5 9.24 9 12 9s5 1.57 5 3.5-2.24 3.5-5 3.5-5-1.57-5-3.5" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit-title">Save on Roaming</h3>
+        <p class="benefit-text">Skip carrier roaming charges entirely with plans that cost a fraction of the price.</p>
+      </div>
+
+      <div class="benefit-card" data-animate="fade-up" data-delay="300">
+        <div class="benefit-icon bg-gradient-to-br from-indigo-500 to-blue-500">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2.5" stroke="white" stroke-width="1.7"/><path d="M11 18h2" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit-title">Easy Setup</h3>
+        <p class="benefit-text">No physical SIM to swap or lose. Install digitally and keep your existing number active.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how-it-works" class="py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto" data-animate="fade-up">
+      <p class="eyebrow">Simple process</p>
+      <h2 class="section-title">Get online in three steps</h2>
+      <p class="section-subtitle">From checkout to connection, most travelers are online in under two minutes.</p>
+    </div>
+
+    <div class="mt-20 relative">
+      <!-- connector line (desktop) -->
+      <div class="hidden md:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent mx-24"></div>
+
+      <div class="grid md:grid-cols-3 gap-12 md:gap-8">
+        <div class="text-center relative" data-animate="fade-up" data-delay="0">
+          <div class="step-number">1</div>
+          <h3 class="mt-6 text-lg font-bold">Choose your destination</h3>
+          <p class="mt-2 text-slate-600 text-sm max-w-xs mx-auto">Pick your country and the data plan that matches your trip length.</p>
+        </div>
+
+        <div class="text-center relative" data-animate="fade-up" data-delay="150">
+          <div class="step-number">2</div>
+          <h3 class="mt-6 text-lg font-bold">Install your eSIM</h3>
+          <p class="mt-2 text-slate-600 text-sm max-w-xs mx-auto">Scan the QR code or tap to install — works on any eSIM-compatible phone.</p>
+        </div>
+
+        <div class="text-center relative" data-animate="fade-up" data-delay="300">
+          <div class="step-number">3</div>
+          <h3 class="mt-6 text-lg font-bold">Enjoy instant internet</h3>
+          <p class="mt-2 text-slate-600 text-sm max-w-xs mx-auto">Land, connect automatically, and stay reachable from the moment you arrive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POPULAR DESTINATIONS ============ -->
+<section id="destinations" class="py-24 bg-lightbg">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto" data-animate="fade-up">
+      <p class="eyebrow">Where to next</p>
+      <h2 class="section-title">Popular destinations</h2>
+      <p class="section-subtitle">Compare eSIM plans for the world's most-visited travel destinations.</p>
+    </div>
+
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <article class="dest-card" data-animate="fade-up" data-delay="0">
+        <div class="dest-image bg-gradient-to-br from-orange-400 to-rose-500">
+          <span class="dest-flag">🇲🇽</span>
+        </div>
+        <div class="dest-body">
+          <h3 class="dest-title">Mexico</h3>
+          <p class="dest-text">From sun-soaked beaches to Mexico City's culture scene — stay connected everywhere.</p>
+          <a href="#offer" class="dest-btn">View plans</a>
+        </div>
+      </article>
+
+      <article class="dest-card" data-animate="fade-up" data-delay="60">
+        <div class="dest-image bg-gradient-to-br from-blue-500 to-indigo-600">
+          <span class="dest-flag">🇺🇸</span>
+        </div>
+        <div class="dest-body">
+          <h3 class="dest-title">United States</h3>
+          <p class="dest-text">Coast-to-coast coverage for road trips, city breaks, and everything between.</p>
+          <a href="#offer" class="dest-btn">View plans</a>
+        </div>
+      </article>
+
+      <article class="dest-card" data-animate="fade-up" data-delay="120">
+        <div class="dest-image bg-gradient-to-br from-pink-400 to-red-500">
+          <span class="dest-flag">🇯🇵</span>
+        </div>
+        <div class="dest-body">
+          <h3 class="dest-title">Japan</h3>
+          <p class="dest-text">Fast, reliable data for navigating Tokyo's trains and Kyoto's backstreets alike.</p>
+          <a href="#offer" class="dest-btn">View plans</a>
+        </div>
+      </article>
+
+      <article class="dest-card" data-animate="fade-up" data-delay="0">
+        <div class="dest-image bg-gradient-to-br from-emerald-400 to-teal-600">
+          <span class="dest-flag">🇹🇭</span>
+        </div>
+        <div class="dest-body">
+          <h3 class="dest-title">Thailand</h3>
+          <p class="dest-text">Stay online island-hopping, from Bangkok's markets to Phuket's coastline.</p>
+          <a href="#offer" class="dest-btn">View plans</a>
+        </div>
+      </article>
+
+      <article class="dest-card" data-animate="fade-up" data-delay="60">
+        <div class="dest-image bg-gradient-to-br from-amber-400 to-orange-600">
+          <span class="dest-flag">🇪🇸</span>
+        </div>
+        <div class="dest-body">
+          <h3 class="dest-title">Spain</h3>
+          <p class="dest-text">From Barcelona's streets to Andalusia's coast, keep every plan within reach.</p>
+          <a href="#offer" class="dest-btn">View plans</a>
+        </div>
+      </article>
+
+      <article class="dest-card" data-animate="fade-up" data-delay="120">
+        <div class="dest-image bg-gradient-to-br from-sky-400 to-blue-600">
+          <span class="dest-flag">🇫🇷</span>
+        </div>
+        <div class="dest-body">
+          <h3 class="dest-title">France</h3>
+          <p class="dest-text">Navigate Paris and beyond with dependable data for maps, translation, and more.</p>
+          <a href="#offer" class="dest-btn">View plans</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY TRAVELERS CHOOSE ESIM ============ -->
+<section class="py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <div data-animate="fade-up">
+      <p class="eyebrow">The upgrade</p>
+      <h2 class="section-title text-left">Why travelers choose eSIM over physical SIM cards</h2>
+      <p class="mt-4 text-slate-600 text-lg">No more hunting for SIM kiosks or juggling tiny plastic cards. An eSIM lives digitally on your device, so you can carry multiple travel profiles at once.</p>
+
+      <ul class="mt-8 space-y-5">
+        <li class="flex gap-4">
+          <span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <p class="font-semibold">Keep your home number active</p>
+            <p class="text-sm text-slate-500">Use a local data plan while staying reachable on your original SIM.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <p class="font-semibold">Nothing to lose or swap</p>
+            <p class="text-sm text-slate-500">No tiny tray tools, no lost SIM cards in a hostel drawer.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <p class="font-semibold">Switch destinations instantly</p>
+            <p class="text-sm text-slate-500">Store multiple regional plans and switch between them in settings.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="relative flex justify-center" data-animate="fade-up" data-delay="150">
+      <div class="relative w-full max-w-sm">
+        <div class="compare-card">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <span class="text-xs font-bold uppercase tracking-wide text-slate-400">Physical SIM</span>
+            <span class="text-slate-300 text-xl">✕</span>
+          </div>
+          <ul class="mt-4 space-y-3 text-sm text-slate-400">
+            <li>Visit a kiosk or store</li>
+            <li>Swap tiny plastic card</li>
+            <li>Lose your original number</li>
+            <li>Wait in line to activate</li>
+          </ul>
+        </div>
+        <div class="compare-card mt-6 border-2 border-primary/20 relative">
+          <span class="absolute -top-3 right-6 bg-gradient-to-r from-primary to-secondary text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">RECOMMENDED</span>
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <span class="text-xs font-bold uppercase tracking-wide text-primary">eSIM</span>
+            <span class="text-accent text-xl">✓</span>
+          </div>
+          <ul class="mt-4 space-y-3 text-sm text-slate-700 font-medium">
+            <li>Install from anywhere</li>
+            <li>Digital, nothing to swap</li>
+            <li>Keep your original number</li>
+            <li>Online in minutes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="py-24 bg-lightbg">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto" data-animate="fade-up">
+      <p class="eyebrow">Traveler stories</p>
+      <h2 class="section-title">Loved by travelers worldwide</h2>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-6">
+      <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0">
+        <div class="flex gap-1 text-amber-400">★★★★★</div>
+        <p class="mt-4 text-slate-700">"Landed in Lisbon and had data before I even left the jet bridge. Setup took less time than finding my luggage."</p>
+        <footer class="mt-6 flex items-center gap-3">
+          <span class="avatar bg-gradient-to-br from-blue-400 to-primary">MC</span>
+          <div>
+            <p class="font-semibold text-sm">Maya Coleman</p>
+            <p class="text-xs text-slate-500">Digital nomad</p>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testimonial-card" data-animate="fade-up" data-delay="120">
+        <div class="flex gap-1 text-amber-400">★★★★★</div>
+        <p class="mt-4 text-slate-700">"I used to budget €50 for roaming every trip. This guide helped me find a plan for a fraction of that."</p>
+        <footer class="mt-6 flex items-center gap-3">
+          <span class="avatar bg-gradient-to-br from-teal-400 to-accent">DR</span>
+          <div>
+            <p class="font-semibold text-sm">Daniel Reyes</p>
+            <p class="text-xs text-slate-500">Frequent flyer</p>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testimonial-card" data-animate="fade-up" data-delay="240">
+        <div class="flex gap-1 text-amber-400">★★★★★</div>
+        <p class="mt-4 text-slate-700">"Kept my home number for calls and used a local data plan for maps. Honestly can't imagine traveling without it now."</p>
+        <footer class="mt-6 flex items-center gap-3">
+          <span class="avatar bg-gradient-to-br from-sky-400 to-secondary">AK</span>
+          <div>
+            <p class="font-semibold text-sm">Aiko Kimura</p>
+            <p class="text-xs text-slate-500">Backpacker</p>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="offer" class="relative py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative rounded-[2.5rem] overflow-hidden px-8 py-16 sm:px-16 sm:py-20 text-center cta-banner" data-animate="fade-up">
+      <div class="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+
+      <h2 class="relative text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">Ready for your next trip?</h2>
+      <p class="relative mt-4 text-blue-100 text-lg max-w-xl mx-auto">Compare eSIM plans for your destination and get connected before you even land.</p>
+      <a href="#offer" class="relative inline-flex mt-10 items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300">
+        Check Available Plans
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-12">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <div class="text-center" data-animate="fade-up">
+      <p class="eyebrow">Questions</p>
+      <h2 class="section-title">Frequently asked questions</h2>
+    </div>
+
+    <div class="mt-14 space-y-4" id="faqList">
+
+      <div class="faq-item" data-animate="fade-up">
+        <button class="faq-question" aria-expanded="false">
+          <span>What is an eSIM?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>An eSIM (embedded SIM) is a digital SIM card built into your phone. Instead of inserting a physical card, you install a data plan electronically — usually by scanning a QR code — and it works alongside or instead of your regular SIM.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is my phone compatible?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Most phones released since 2018, including recent iPhone, Samsung Galaxy, and Google Pixel models, support eSIM. We recommend checking your device settings for "Add eSIM" or "Cellular Plan" before you travel.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I keep my WhatsApp and other apps working?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Your apps, contacts, and phone number stay exactly as they are. An eSIM adds a data connection — it doesn't replace your existing accounts or messaging apps.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up">
+        <button class="faq-question" aria-expanded="false">
+          <span>When should I activate it?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We recommend installing your eSIM profile before you fly using Wi-Fi, then activating the data plan once you land in your destination so you don't lose any validity days in transit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need Wi-Fi to install an eSIM?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, you'll need an internet connection (Wi-Fi or existing data) to download the eSIM profile. That's why we suggest installing it before departure, while you're still connected at home.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up">
+        <button class="faq-question" aria-expanded="false">
+          <span>What happens when my data plan runs out?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Most providers let you top up or purchase a new plan directly from their app, so you can add more data in a couple of taps without needing a new profile.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-slate-950 text-slate-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="col-span-2">
+        <a href="#hero" class="flex items-center gap-2">
+          <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Z" stroke="white" stroke-width="1.6"/></svg>
+          </span>
+          <span class="text-lg font-bold text-white">Airalo<span class="text-secondary">Guide</span></span>
+        </a>
+        <p class="mt-4 text-sm max-w-sm">An independent travel connectivity guide helping travelers compare and choose the right eSIM for every trip. Not affiliated with any single carrier.</p>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Explore</p>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#benefits" class="footer-link">Benefits</a></li>
+          <li><a href="#how-it-works" class="footer-link">How it works</a></li>
+          <li><a href="#destinations" class="footer-link">Destinations</a></li>
+          <li><a href="#faq" class="footer-link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Legal</p>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-link">Terms</a></li>
+          <li><a href="#" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>&copy; <span id="year"></span> Airalo Guide. All rights reserved.</p>
+      <p>Independent guide · Not affiliated with any single eSIM provider</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
